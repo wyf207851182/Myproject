@@ -6,6 +6,8 @@
     <h2>{{age}}</h2>
     <h3>{{list}} - {{arr}} - {{arr2}}</h3>
     <button @click="plus">Plus</button>
+    <button @click="add">add</button>
+    <button @click="testPromise">测试promise</button>
   </div>
 </template>
 <script>
@@ -38,6 +40,12 @@ export default {
   methods:{
     plus(){
       this.$store.commit('increment') //调用mutations里的函数，修改仓库数据
+    },
+    add(){
+      this.$store.dispatch('add',{num:3})
+    },
+    testPromise(){
+      this.$store.dispatch('testPromise2')
     }
   }
 }
